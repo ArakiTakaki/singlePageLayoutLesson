@@ -17,4 +17,10 @@ let nav = (data) => {
 }
 
 let ajax = new Transition();
-ajax.getJson("/api/test",nav)
+
+let test1 = () =>{
+    ajax.getJson("/api/test",nav)
+}
+let test2 = () =>{
+    ajax.getJson("/api/test2",nav)
+}

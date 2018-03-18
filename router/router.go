@@ -23,14 +23,18 @@ func GetRouter() *gin.Engine {
 		c.HTML(400, "index.html", nil)
 	})
 
-	r.POST("/api/test", post)
-	r.GET("/api/test", post)
+	r.POST("/api/test", test1)
+	r.POST("/api/test2", test2)
 	//ルーティンググループテンプレート
 
 	return r
 }
 
-func post(c *gin.Context) {
+func test1(c *gin.Context) {
 	var data = []int{1, 2, 3, 4}
+	c.JSON(http.StatusOK, data)
+}
+func test2(c *gin.Context) {
+	var data = []int{10, 9, 5, 3}
 	c.JSON(http.StatusOK, data)
 }
