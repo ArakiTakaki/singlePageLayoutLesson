@@ -17,7 +17,7 @@ func GetRouter() *gin.Engine {
 	r.LoadHTMLGlob("views/*")
 
 	r.NoRoute(func(c *gin.Context) {
-		c.HTML(400, "404.html", nil)
+		c.HTML(400, "index.html", nil)
 	})
 
 	//ルーティンググループテンプレート
