@@ -1,11 +1,4 @@
 
-let test = new Transition();
-test.comments()
-
-let tests = (data) => {
-    console.log(data)
-}
-
 
 let TestNav = props =>{
     console.log(props.item)
@@ -15,7 +8,7 @@ let TestNav = props =>{
     )
     return <ul>{listItems}</ul>
 }
-let aaa = (data) => {
+let nav = (data) => {
     console.log(data)
     ReactDOM.render(
         <TestNav item={data} />,
@@ -23,4 +16,5 @@ let aaa = (data) => {
     )
 }
 
-test.getJson("/api/test",aaa)
+let ajax = new Transition();
+ajax.getJson("/api/test",nav)
