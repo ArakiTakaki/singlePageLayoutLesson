@@ -11,7 +11,7 @@
  - JavaScript
      - react.js
  - CSS
-     - bootstrap4
+     - pure-css
 
 ## やりたいこと
 
