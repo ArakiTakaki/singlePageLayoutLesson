@@ -1,8 +1,7 @@
-package main
+package models
 
 import (
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 var db = newDBConn()
@@ -21,18 +20,4 @@ func newDBConn() *gorm.DB {
 // Get DBの接続を返す（基本的に
 func Get() *gorm.DB {
 	return db
-}
-
-type Place struct {
-	gorm.Model
-	ID int `gorm:size""`
-}
-
-func main() {
-	test := Get()
-	test.Close()
-	test = Get()
-	test.Close()
-	test = Get()
-	test.Close()
 }
