@@ -6,6 +6,11 @@ import (
 )
 
 func main() {
+	// db := models.Get()
+	// defer db.Close()
+	// models.CreateTables()
+	// models.GetAuthor()
+
 	var r = router.GetRouter()
 	r.Run(":8000")
 }

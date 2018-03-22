@@ -1,6 +1,4 @@
-
-class Transition {
-
+class PostAjax{
     comments(){
         console.log("test")
     }

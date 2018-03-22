@@ -1,7 +1,6 @@
 package router
 
 import (
-	context "github.com/ArakiTakaki/Context"
 	"github.com/ArakiTakaki/singlePageLayoutLesson/controllers/api"
 	"github.com/gin-gonic/gin"
 )
@@ -9,7 +8,6 @@ import (
 // GetRouter そのまま
 func GetRouter() *gin.Engine {
 	var r = gin.Default()
-	context.New()
 
 	r.Static("/js", "./public/js")
 	r.Static("/css", "./public/css")

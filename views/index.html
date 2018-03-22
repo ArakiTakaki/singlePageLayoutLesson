@@ -15,8 +15,15 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
     <!-- PURE -->
 
-    <script type="text/babel" src="/js/sample.js"></script>
+    <!-- routing -->
+    <script type="text/babel" src="/js/post-ajax.js"></script>
     <script type="text/babel" src="/js/main.js"></script>
+    <script type="text/babel" src="/js/routing.js"></script>
+    <!-- routing -->
+
+    <!-- Style -->
+    <link rel="stylesheet" href="/css/master.css">
+    <!-- Style -->
 
 </head>
 <body>
@@ -29,9 +36,9 @@
 <div class="pure-g">
     <nav class="pure-u-1-5">
         <ul>
-            <li onclick="test1()">nav</li>
+            <li><a onclick="test1()">nav</a></li>
             <li onclick="test2()">nav</li>
-            <li>nav</li>
+            <li onclick="authorPrint()">Author</li>
             <li>nav</li>
             <li>nav</li>
         </ul>

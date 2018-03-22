@@ -1,7 +1,10 @@
 package api
 
 import (
+	"fmt"
 	"net/http"
+
+	"github.com/ArakiTakaki/singlePageLayoutLesson/models"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,6 +13,14 @@ import (
 func RootSet(r *gin.RouterGroup) {
 	r.POST("/test", test1)
 	r.POST("/test2", test2)
+	r.POST("/author", author)
+}
+
+func author(c *gin.Context) {
+	work := models.GetAuthor()
+	fmt.Println("GET AUTHOR")
+	fmt.Println(work)
+	c.JSON(http.StatusOK, work)
 }
 
 func test1(c *gin.Context) {

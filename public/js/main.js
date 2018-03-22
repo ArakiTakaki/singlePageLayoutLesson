@@ -1,4 +1,6 @@
-
+let Print = props =>{
+    console.log(props);
+}
 
 let TestNav = props =>{
     console.log(props.item)
@@ -16,12 +18,21 @@ let nav = (data) => {
     )
 }
 
-let ajax = new Transition();
-ajax.getJson("/api/test",nav)
 
-let test1 = () =>{
-    ajax.getJson("/api/test",nav)
+let AuthorContent = (props) => {
+    var data = props.items
+    return <ul>
+        <li>{data.ID}</li>
+        <li>{data.name}</li>
+        <li>{data.email}</li>
+        <li>{data.url}</li>
+    </ul>
+    
 }
-let test2 = () =>{
-    ajax.getJson("/api/test2",nav)
+let author = (data) => {
+    console.log(data)
+    ReactDOM.render(
+        <AuthorContent items={data} />,
+        document.getElementById('test')
+    )
 }
