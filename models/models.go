@@ -15,7 +15,7 @@ func CreateTables() {
 
 // Model 初期セット
 type Model struct {
-	ID        uint       `gorm:"primary_key" json: "id"`
+	ID        uint       `gorm:"primary_key" json:"id"`
 	CreatedAt time.Time  `json:"created_at"`
 	UpdatedAt time.Time  `json:"updated_at"`
 	DeletedAt *time.Time `sql:"index" json:"-"`
@@ -24,7 +24,7 @@ type Model struct {
 // Post 記事の投下部
 type Post struct {
 	Model
-	Title    string `gorm:"size:50" json:title`
+	Title    string `gorm:"size:50" json:"title"`
 	Content  string
 	AuthorID uint
 	Author   Author `gorm:"ForeignKey:AuthorID;AssociationForeignKey:ID"`
@@ -34,9 +34,9 @@ type Post struct {
 
 // Tag メモリに直接記載しても良い
 type Tag struct {
-	ID       uint   `gorm:AUTO_INCREMENT;PRIMARY_KEY json:"id"`
+	ID       uint   `gorm:"AUTO_INCREMENT; PRIMARY_KEY" json:"id"`
 	Name     string `gorm:"size:50" json:"name"`
-	ParentID uint   `json: "parent"`
+	ParentID uint   `json:"parent"`
 }
 
 // Author 記事の筆者情報
@@ -50,7 +50,7 @@ type Author struct {
 // Comment 記事に対するコメント
 type Comment struct {
 	Model
-	PostID  uint   `gorm:index`
+	PostID  uint   `gorm:"index"`
 	Name    string `json:"name"`
 	URL     string `json:"url"`
 	Content string `json:"comment"`
