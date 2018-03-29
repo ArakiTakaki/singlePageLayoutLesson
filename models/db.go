@@ -2,7 +2,6 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
-	// MySQL driver
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
